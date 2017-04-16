@@ -15,6 +15,9 @@
 
 # method to display city names to the user.
 
+
+
+# The hash containing all the information needed for cities and postcodes.
 post_code = {
   'sydney' => 2000,
   'brisbane' => 4000,
@@ -28,26 +31,23 @@ post_code = {
   'wollongong' => 2500
 }
 
-# method to display city names
-# method to get area code, dial_book and the city name.
-
-# Looping until 
+# Looping until the User presses 'n'
 loop do
 
  puts "Do you want to look up a city name(Y/N)"
- answer = gets.chomp.downcase
+ answer = gets.chomp.downcase # using .downcase to make sure that the answer can be read no matter what.
 
  if answer != "y"
    break
  end
 
- # method to get city names.
-
  puts "Which city would you like the post code for: "
 
+ # Showing the user the different available cities via the .each method.
  post_code.each { |k, v| puts k }
  city = gets.chomp.downcase
 
+ # Which answer depends on what the user types. There's gotta be an easier way to do this, but I'll leave it here like this for now. It works.
  if city == "sydney"
    puts "The post_code for Sydney is #{post_code['sydney']}"
  elsif city == "brisbane"
@@ -73,3 +73,6 @@ loop do
  end
 
 end
+
+# It always pays to be polite
+puts "Goodbye"
