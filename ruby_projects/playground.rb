@@ -14,9 +14,11 @@
 #
 # puts "Welcome, #{first_name + " " + family_name}, to the playground!"
 
-def multiply(first_number, second_number)
-  first_number.to_f * second_number.to_f
-end
+# def multiply(first_number, second_number)
+#   first_number.to_f * second_number.to_f
+# end
+#
+# puts multiply(5, 10)
+# puts multiply(20, )
 
-puts multiply(5, 10)
-puts multiply(20, )
+my_details = {'name'  => 'Sheena', 'favcolor' => 'purple'}
