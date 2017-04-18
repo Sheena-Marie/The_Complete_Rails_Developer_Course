@@ -1,24 +1,26 @@
-<h1>Listing All Articles</h1>
+<h1 class="heading">Listing All Articles</h1>
 
-<p><%= link_to 'Create New Article', new_article_path %></p>
+<p><%= link_to 'Create New Article', new_article_path, class: 'btn btn-default btn-show' %></p>
 
 <!-- Table listing all the current articles -->
-<table class="table">
-  <tr>
+<table class="table-condensed">
+  <tr class="tbl-heading">
     <th>Title</th>
     <th>Description</th>
+    <th></th>
   </tr>
 
   <!-- looping through all the articles and displaying them on the page -->
   <% @articles.each do |article| %>
-  <tr>
-
+  <tr class="tbl-font">
     <td><%= article.title %></td>
     <td><%= article.description %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Show', article_path(article) %></td>
-    <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    <td><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-default btn-link' %></td>
+    <td><%= link_to 'Show', article_path(article), class: 'btn btn-default btn-show' %></td>
+    <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default btn-delete' %></td>
 
   </tr>
   <% end %>
 </table>
+
+<%= link_to 'Home', root_path, class: 'btn btn-default btn-link' %>
