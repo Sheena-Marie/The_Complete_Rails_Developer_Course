@@ -1,36 +1,6 @@
 <h1>Editing Page</h1>
 
-<% if @article.errors.any? %>
-
-  <h2 class="error">The following errors prevented the article from being created</h2>
-
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-    <li class="error"><%= msg %></li>
-    <% end %>
-  </ul>
-
-<% end %>
-
-<%= form_for @article do |f| %>
-
-  <p>
-    <%= f.label :title, class: 'art-form' %>
-    <br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :description, class: 'art-form' %>
-    <br>
-    <%= f.text_area :description %>
-  </p>
-
-  <p>
-    <%= f.submit class: 'btn btn-default btn-link' %>
-  </p>
-
-<% end %>
-
+<!-- Form is found in the '_form.html.erb' partial -->
+<%= render 'form' %>
 
 <%= link_to 'Back to articles listing', articles_path %>

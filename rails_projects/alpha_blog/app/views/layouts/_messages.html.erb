@@ -1,0 +1,6 @@
+<!-- If there's any errors, this error message will flash on the screen -->
+<% flash.each do |name, msg| %>
+  <ul class="error">
+    <li><%= msg %></li>
+  </ul>
+<% end %>

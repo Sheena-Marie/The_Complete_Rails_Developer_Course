@@ -1,0 +1,36 @@
+<!-- Form partial for New and Edit articles form -->
+
+<!-- If there are any errors, than show an error message listing all the current errors -->
+<% if @article.errors.any? %>
+
+  <h2 class="error">The following errors prevented the article from being created</h2>
+
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li class="error"><%= msg %></li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+
+<!-- Form for creating a new article and updating an article -->
+<%= form_for @article do |f| %>
+
+  <p>
+    <%= f.label :title, class: 'art-form' %>
+    <br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description, class: 'art-form' %>
+    <br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit class: 'btn btn-default btn-link' %>
+  </p>
+
+<% end %>
